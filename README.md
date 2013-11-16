@@ -1,0 +1,3 @@
+This was just because Jeff & Grant thought it would be good for me to learn JS by creating a slideshow with only JavaScript.
+
+Just clone nothing to it....
