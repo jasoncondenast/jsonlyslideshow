@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Jason attempting baby steps</title>
+
+    	<style type="text/css">
+			img {width: 450px;height: 400px;}
+		</style>
+
+	</head>
+	
+	<body>
+		<form name="hack">
+			<input type="hidden" id=1 name="currentImage" value=1>
+		</form>
+		<div>
+			<img src="jefflouden.jpg" alt="image slide show" id="imageSlide">
+		</div>
+		<div>
+			<a href="#" onclick="imgSwitch(1)">Next</a> <a href="#" onclick="imgSwitch(2)">Prev</a> 
+		</div>
+   	</body>
+	
+	<script type="text/javascript">
+	// First, let us get the image id
+	var imgid = document.getElementById('imageSlide');
+
+	//Store image references here
+	var faceArr = ["jefflouden.jpg", "Prakash.jpg", "GrantMiller.jpg"];
+
+	// where we make the switch
+	function imgSwitch (direction) 
+	{
+		//Get the hidden var that I love to use sorry guys
+	    var whichImage = document.hack.elements['currentImage'].value;
+			
+		if(direction ==1)
+		{
+			//Find out what position we are in because if we are at the end start at 0	    
+			if(whichImage >= faceArr.length-1) 
+		    {
+		        whichImage = 0;
+		    }
+			else
+			{	
+		    	whichImage++;
+		    }
+		}
+		else
+		{
+			//Find out what position we are in because if we are at the start we need to go to the end	    
+			if(whichImage == 0) 
+		    {
+		        whichImage = faceArr.length-1;
+		    }
+			else
+			{	
+		    	whichImage--;
+		    }
+		}
+	    
+	    //*****Testing******* 
+	    alert(whichImage);
+	    
+	    //update hidden val
+	    document.hack.elements['currentImage'].value = whichImage;
+
+	    //actually update the image
+	    imgid.setAttribute("src", faceArr[whichImage]);
+	}
+	</script>
+<html> 
