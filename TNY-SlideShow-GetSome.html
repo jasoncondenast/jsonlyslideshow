@@ -4,11 +4,16 @@
 
     	<style type="text/css">
 			img {width: 450px;height: 400px;}
+			.imgJeff { position:absolute; top: 550px; z-index: 1; } 
+			.imgPrakash { position:absolute; top: 550px; z-index: 3; } 
+			.imgGrant { position:absolute; top: 550px; z-index: 3; } 
+</style>
 		</style>
 
 	</head>
 	
 	<body>
+		V1 - Basic Click Slide Show<br>
 		<form name="hack">
 			<input type="hidden" id=1 name="currentImage" value=1>
 		</form>
@@ -17,6 +22,15 @@
 		</div>
 		<div>
 			<a href="#" onclick="imgSwitch(1)">Next</a> <a href="#" onclick="imgSwitch(2)">Prev</a> 
+		</div>
+		<br><br>V2 - Time to add some animation<br>
+		<div>
+			<img class="imgJeff" src="jefflouden.jpg" alt="image slide show" id="imageSlide">
+			<img class="imgPrakash" src="Prakash.jpg" alt="image slide show" id="imageSlide">
+			<img class="imgGrant" src="GrantMiller.jpg" alt="image slide show" id="imageSlide">
+		</div>
+		<div>
+			<a href="#" onclick="imgSwitch2(1)">Next</a> <a href="#" onclick="imgSwitch2(2)">Prev</a> 
 		</div>
    	</body>
 	
@@ -63,6 +77,11 @@
 
 	    //actually update the image
 	    imgid.setAttribute("src", faceArr[whichImage]);
+	}
+	// where we make the switch
+	function imgSwitch2 (direction) 
+	{
+		
 	}
 	</script>
 <html> 
